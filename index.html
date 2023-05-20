@@ -10,13 +10,19 @@
     <meta name="author" content="Gonzalo Farías" />
 
     <title>LaScaloneta</title>
-
     <link rel="stylesheet" href="css/styles.css">
     <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="js/config.js"></script>
     <script src="js/functions.js"></script>
+    <script src="js/comentarios.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
 </head>
+
+
 
 <body class="oculto">
     <nav>
@@ -266,74 +272,29 @@
         </section>
         <section class="sectionA" id="comentarios">
             <div class="container">
-                <h2>★ COMENTARIOS</h2>
-                <div>
-                    <form class="rounded-3" action="POST">
-                        <p>Deja tu comentario para apoyar a la selección Argentina de Scaloni!</p>
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
-                        <label for="mensaje">Mensaje</label>
-                        <textarea name="mensaje" id="msg" placeholder="Expresa tu amor por la selección" cols="10"
-                            rows="5"></textarea>
-                        <button type="button">Enviar</button>
-                    </form>
-                </div>
+              <h2>★ COMENTARIOS</h2>
+              <div id="form">
+                <form class="rounded-3" id="commentForm">
+                  <p>Deja tu comentario para apoyar a la selección Argentina de Scaloni!</p>
+                  <label for="nombre">Nombre</label>
+                  <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+                  <label for="mensaje">Mensaje</label>
+                  <textarea name="mensaje" id="msg" placeholder="Expresa tu amor por la selección" cols="10" rows="5"></textarea>
+                </form>
+                <button id="boton" onclick="enviarComentario(), resetForm()">Enviar</button>
+              </div>
             </div>
         </section>
+        
         <section class="sectionB">
             <div class="container">
                 <h3>Mensajes de apoyo</h3>
 
-                <ul class="messages">
+                <ul id="commentList" class="messages">
                     <li>
-                        <div class="user-info">
-                            <span class="username">Facundo Farías</span>
-                            <span class="time">12:30 PM</span>
-                        </div>
-                        <div class="message-content">
-                            <p>"¡Vamos Argentina! ¡A ganar el próximo partido!"</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="user-info">
-                            <span class="username">Alan Rodriguez</span>
-                            <span class="time">1:15 PM</span>
-                        </div>
-                        <div class="message-content">
-                            <p>"Scaloni ha hecho un gran trabajo al frente de la selección. ¡A seguir adelante!"</p>
-                        </div>
-                    </li>
-                    <li class="hidden">
-                        <div class="user-info">
-                            <span class="username">Cristian Frijol</span>
-                            <span class="time">14:02 PM</span>
-                        </div>
-                        <div class="message-content">
-                            <p>"Dale la Scaloneta que va con todo papaaa"</p>
-                        </div>
-                    </li>
-                    <li class="hidden">
-                        <div class="user-info">
-                            <span class="username">Pablo Olivera</span>
-                            <span class="time">14:12 PM</span>
-                        </div>
-                        <div class="message-content">
-                            <p>"Lo bien que juega esta selección no tiene sentido"</p>
-                        </div>
-                    </li>
-                    <li class="hidden">
-                        <div class="user-info">
-                            <span class="username">Fabian Eduardo Funes Mori</span>
-                            <span class="time">00:52 AM</span>
-                        </div>
-                        <div class="message-content">
-                            <p>"Vamos Scaloni, el mejor DT del universo"</p>
-                        </div>
-                    </li>
-                    <li>
-                        <a id="verMas" href="#">Ver más...</a>
                     </li>
                 </ul>
+                <a id="verMas" onclick="mostrarMensajes()" href="#">Ver más...</a>
             </div>
 
         </section>

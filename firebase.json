@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "lascaloneta-9ea9b",
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

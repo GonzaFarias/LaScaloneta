@@ -227,7 +227,7 @@
 
   /*---------------------- FORMULARIO ----------------------*/
 
-  form {
+  #form {
     display: inline-block;
     text-align: left;
     background: linear-gradient(90deg, #0077c2, #0690e6, #1da2f5);
@@ -294,7 +294,7 @@
     font-family: 'Roboto Condensed', sans-serif;
   }
 
-  form button[type="button"] {
+  #form button {
     margin-top: 10px;
     background-color: #01131f;
     color: #fff;
@@ -305,7 +305,7 @@
     font-family: 'Roboto Condensed', sans-serif;
   }
 
-  form button[type="button"]:hover {
+  #form button:hover {
     background-color: #022a43;
   }
 
@@ -353,6 +353,10 @@
   .message-content p {
     margin: 0;
     color: rgb(0, 0, 0);
+  }
+
+  #commentList{
+    margin-bottom: 20px;
   }
 
   #verMas {
@@ -499,3 +503,7 @@
       padding: 80px 30px 80px 30px;
     }
   }
+
+
+  /*---------------------- ANIMACIONES ----------------------*/
+
